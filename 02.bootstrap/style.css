@@ -1,0 +1,80 @@
+  /* Default height for small devices */
+  #intro-example {
+    height: 400px;
+}
+
+/* Height for devices larger than 992px */
+@media (min-width: 992px) {
+    #intro-example {
+        height: 600px;
+    }
+}
+
+.immagineMain {
+    height: 100vh;
+    background-image: url('./media/mainImg.jpg');
+    background-size: cover;
+}
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+}
+
+.immaginiCard {
+    height: 250px;
+}
+
+.altezzaCard {
+    height: 500px;
+}
+
+.imgSectionMid {
+    width: 360px;
+    height: 300px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Mukta', sans-serif;
+}
+
+.mainTitolo {
+    font-size: 100px;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgba(173, 216, 230, 0.3);
+    height: 100vh;
+}
+
+.bgNav {
+    background-color: rgb(255, 255, 255);
+}
+
+.cardChiSiamo {
+    width: 360px;
+    height: 380px;
+}
+
+.bgBody {
+    background-image: url("./media/mainImg.jpg");
+}
+
+.bgFooter {
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: lightblue;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: lightblue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid blue;  /* creates padding around scroll thumb */
+}

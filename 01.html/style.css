@@ -1,0 +1,112 @@
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav ul li a {
+    color: lightgray;
+    text-decoration: none;
+    font-size: 23px;
+    padding: 10px 15px;
+}
+
+li:nth-child(1) {
+    border-right: 2px solid lightgray;
+    margin-right: 0px;
+}
+
+li > a:hover {
+    background-color: black;
+    color: lightgray;
+}
+
+article > a:visited {
+    color: gray;
+}
+
+
+nav {
+    background-color: gray;
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+
+#sectionArticle {
+    padding: 0px 150px;
+}
+
+main {
+    width: 65%;
+    float: left;
+    border-right: 2px solid black;
+    padding-left: 20px;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    padding: 20px;
+}
+
+aside {
+    width: 30%;
+    float: right;
+}
+
+body {
+    height: 100vh;
+    position: relative;
+    box-sizing: content-box;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-color: rgb(235, 229, 229);
+}
+
+footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid black;
+    background-color: gray;
+    color: lightgray;
+    font-weight: 500;
+}
+
+.mainTitle {
+    padding-right: 250px;
+}
+
+#titolo {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+#tuttiGliArti {
+    padding: 0px 50px;
+}
+
+.margineArt{
+    margin-top: 50px;
+}
