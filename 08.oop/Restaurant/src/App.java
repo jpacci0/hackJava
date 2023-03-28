@@ -9,7 +9,7 @@ public class App {
         drinks[0] = new Drink("Coca cola", 3);
         drinks[1] = new Drink("Gin Tonic", 10);
 
-        Restaurant restaurant = new Restaurant("Il ristorante di Jacopo", dishes, drinks);
+        Restaurant restaurant = new Restaurant("Jacopo", dishes, drinks);
 
         restaurant.stampaMenu();
     }

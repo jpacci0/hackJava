@@ -10,18 +10,18 @@ public class Restaurant {
     }
 
     public void stampaMenu() {
-        System.out.println("Menu del ristorante " + name + ":");
+        System.out.println("\nMenu del ristorante " + name + ".\n");
 
-        System.out.println("Piatti:");
+        System.out.println("Da mangiare abbiamo: \n");
 
         for (Dish dish : dishes) {
-            System.out.println(dish.getNome() + ": " + dish.getPrezzo() + " euro Ingredienti: " + dish.getIngredienti());
+            System.out.println(dish.getNome() + ": " + dish.getPrezzo() + " euro\nIngredienti: " + dish.getIngredienti() + "\n");
         }
 
-        System.out.println("Bevande:");
+        System.out.println("Da bere abbiamo: \n");
 
         for (Drink drink : drinks) {
-            System.out.println(drink.getNome() + ": " + drink.getPrezzo() + " euro");
+            System.out.println(drink.getNome() + ": " + drink.getPrezzo() + " euro\n");
         }
     }
 }
