@@ -1,0 +1,26 @@
+-- INSERT into students(nome)
+-- values ('Alice')
+-- INSERT into students(nome)
+-- values ('Bob')
+-- INSERT into students(nome)
+-- values ('Charlie')
+
+-- delete FROM orders where id = 1;
+
+-- INSERT into courses(course_name)
+-- values ('Math')
+-- INSERT into courses(course_name)
+-- values ('Science')
+-- INSERT into courses(course_name)
+-- values ('History')
+
+-- INSERT into students_courses(student_id, course_id)
+-- values (1, 1)
+-- INSERT into students_courses(student_id, course_id)
+-- values (1, 2)
+-- INSERT into students_courses(student_id, course_id)
+-- values (2, 2)
+-- INSERT into students_courses(student_id, course_id)
+-- values (3, 1)
+-- INSERT into students_courses(student_id, course_id)
+-- values (3, 3)
