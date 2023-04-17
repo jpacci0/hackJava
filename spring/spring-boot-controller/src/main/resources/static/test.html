@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum dolores repellat, debitis optio
+        tenetur expedita? Repudiandae voluptas dolores maiores incidunt iusto laudantium mollitia ipsa quam neque. Ex,
+        error aliquid.
+    </div>
+    <script>
+        // let post = {
+        //     title: "Ciao",
+        //     body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum dolores repellat, debitis optio
+        //             tenetur expedita? Repudiandae voluptas dolores maiores incidunt iusto laudantium mollitia ipsa quam neque. Ex,
+        //             error aliquid.`,
+        //     publishDate: "20230417",
+        //     authorId: 2,
+        // };
+        // let body = JSON.stringify(post);
+        // // new XMLHttpRequest()
+        // fetch("/posts", {
+        //     method: "POST",
+        //     headers: {
+        //         "content-type": "application/json"
+        //     },
+        //     body: body,
+        // }).then((res) => {
+        //     console.log(res.status);
+        // });
+
+//         let parse = JSON.parse(`[
+//     {
+//         "id": 1,
+//         "firstName": "Mirko",
+//         "lastName": "Abbrescia",
+//         "email": "mirkoabbrescia@gmail.com",
+//         "posts": [
+//             {
+//                 "id": 1,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 1,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 8,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 8,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         "id": 2,
+//         "firstName": "Andrea",
+//         "lastName": "Mininni",
+//         "email": "andreamininni@gmail.com",
+//         "posts": [
+//             {
+//                 "id": 2,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20240413",
+//                 "comments": [
+//                     {
+//                         "id": 2,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 3,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 3,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 4,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 4,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 9,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 9,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         "id": 3,
+//         "firstName": "Siria",
+//         "lastName": "Bertazzoni",
+//         "email": "siriabertazzoni@gmail.com",
+//         "posts": [
+//             {
+//                 "id": 5,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 5,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 6,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 6,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             },
+//             {
+//                 "id": 10,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 10,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         "id": 4,
+//         "firstName": "Jacopo",
+//         "lastName": "Paccioretti",
+//         "email": "jacopopaccioretti@gmail.com",
+//         "posts": [
+//             {
+//                 "id": 7,
+//                 "title": "Lorem ipsum",
+//                 "body": "Lorem ipsum",
+//                 "publishDate": "20230413",
+//                 "comments": [
+//                     {
+//                         "id": 7,
+//                         "email": "sconosciuto@gmail.com",
+//                         "body": "Lorem ipsum",
+//                         "publishDate": "20230413"
+//                     }
+//                 ]
+//             }
+//         ]
+//     }
+// ]`)
+
+//         console.log(parse);
+
+    // fetch('/authors')
+    //     .then((res) => {
+    //         return res.json();
+    //     }).then((authorsList) => {
+    //         console.log(authorsList);
+    //     });
+    </script>
+</body>
+
+</html>

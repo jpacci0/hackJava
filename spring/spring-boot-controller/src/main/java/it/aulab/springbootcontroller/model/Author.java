@@ -1,7 +1,9 @@
-package demo.springbootcontroller.model;
+package it.aulab.springbootcontroller.model;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,9 +26,11 @@ public class Author {
     @Column(name = "lastname", length = 100, nullable = false)
     private String lastName;
 
+    // @JsonIgnore
     @Column(length = 100, nullable = false)
     private String email;
 
+    @JsonIgnoreProperties({ "author" })
     @OneToMany(mappedBy = "author")
     private List<Post> posts = new ArrayList<Post>();
 
@@ -65,6 +69,13 @@ public class Author {
         this.email = email;
     }
 
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
 
 }
-

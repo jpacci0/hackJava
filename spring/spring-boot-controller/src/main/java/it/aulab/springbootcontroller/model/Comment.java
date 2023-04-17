@@ -1,42 +1,36 @@
-package demo.springbootcontroller.model;
+package it.aulab.springbootcontroller.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-// import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "posts")
-public class Post {
+@Table(name = "comments")
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 200, nullable = false)
-    private String title;
+    @Column(length = 100, nullable = false)
+    private String email;
 
-    @Column(length = 1000, nullable = false)
+    @Column(length = 200, nullable = false)
     private String body;
     
-    @Column(name = "publish_date", length = 8)
+    @Column(name = "date", length = 8)
     private String publishDate;
-
+    
+    @JsonIgnoreProperties({ "comments" })
     @ManyToOne
-    // @JoinColumn(name = "author_id")
-    private Author author;
+    private Post post;
 
-    @OneToMany(mappedBy = "post")
-    private List<Comment> comments = new ArrayList<Comment>();
-
-    public Post() {
+    public Comment() {
     }
 
     public Long getId() {
@@ -47,12 +41,12 @@ public class Post {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getEmail() {
+        return email;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getBody() {
@@ -71,14 +65,11 @@ public class Post {
         this.publishDate = publishDate;
     }
 
-    public Author getAuthor() {
-        return author;
+    public Post getPost() {
+        return post;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setPost(Post post) {
+        this.post = post;
     }
-    
 }
-
-
