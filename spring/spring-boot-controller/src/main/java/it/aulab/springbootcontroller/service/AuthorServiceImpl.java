@@ -16,6 +16,7 @@ import it.aulab.springbootcontroller.model.Author;
 import it.aulab.springbootcontroller.model.Post;
 import it.aulab.springbootcontroller.repository.AuthorRepository;
 import it.aulab.springbootcontroller.repository.PostRepository;
+import it.aulab.springbootcontroller.util.exception.AuthorBadRequest;
 import it.aulab.springbootcontroller.util.exception.AuthorNotFound;
 
 @Service
@@ -93,23 +94,32 @@ public class AuthorServiceImpl implements AuthorService {
 	}
 
 	@Override
-	public List<Author> read(String firstName, String lastName) {
+	public List<AuthorDTO> read(String firstName, String lastName) {
+		List<AuthorDTO> dtos = new ArrayList<AuthorDTO>();
+		List<Author> authors;
+
         if (firstName != null && lastName != null) {
-            return authorRepository.findByFirstNameAndLastName(firstName, lastName);
+            authors = authorRepository.findByFirstNameAndLastName(firstName, lastName);
         } else if (firstName != null) {
-            return authorRepository.findByFirstName(firstName);
+            authors = authorRepository.findByFirstName(firstName);
         } else if (lastName != null) {
-            return authorRepository.findByLastName(lastName);
+            authors = authorRepository.findByLastName(lastName);
         } else {
-            return authorRepository.findAll();
+            authors = authorRepository.findAll();
         }
+
+		for (Author author: authors) {
+			dtos.add(modelMapper.map(author, AuthorDTO.class));
+		}
+
+		return dtos;
 	}
 
 	@Override
-	public Author readOne(Long id) throws Exception {
+	public AuthorDTO readOne(Long id) throws Exception {
 		Optional<Author> optionalAuthor = authorRepository.findById(id);
         if (optionalAuthor.isPresent()) {
-            return optionalAuthor.get();
+            return modelMapper.map(optionalAuthor.get(), AuthorDTO.class);
         }
         throw new AuthorNotFound();
 	}
@@ -124,12 +134,22 @@ public class AuthorServiceImpl implements AuthorService {
 	// }
 
 	@Override
-	public Author create(Author author) {
-		return authorRepository.save(author);
+	public AuthorDTO create(Author author) throws Exception {
+		// Validation
+		if (author.getFirstName() == null || author.getLastName() == null || author.getEmail() == null) {
+			if (author.getFirstName() == null)
+				throw new AuthorBadRequest("Firstname is required");
+			if (author.getLastName() == null)
+				throw new AuthorBadRequest("Lastname is required");
+			if (author.getEmail() == null)
+				throw new AuthorBadRequest("Email is required");
+			// throw new AuthorBadRequest();
+		}
+		return modelMapper.map(authorRepository.save(author), AuthorDTO.class);
 	}
 
 	@Override
-	public Author update(Long id, Author author) throws Exception {
+	public AuthorDTO update(Long id, Author author) throws Exception {
         Optional<Author> dbOptionalAuthor = authorRepository.findById(id);
         if (dbOptionalAuthor.isPresent()) {
             Author dbAuthor = dbOptionalAuthor.get();
@@ -137,7 +157,7 @@ public class AuthorServiceImpl implements AuthorService {
             dbAuthor.setLastName(author.getLastName());
             dbAuthor.setEmail(author.getEmail());
             authorRepository.save(dbAuthor);
-            return dbAuthor;
+            return modelMapper.map(dbAuthor, AuthorDTO.class);
         }
         throw new AuthorNotFound();
 	}

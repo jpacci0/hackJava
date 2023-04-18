@@ -1,8 +1,13 @@
 package it.aulab.springbootcontroller.dto;
 
 public class PostDTO {
+    private Long id;
+
     private String title;
     private String body;
+    private Integer bodyLenght;
+    private String publishDate;
+
     private String authorFirstName; // author.firstName
     private String authorLastName;  // author.lastName
     private String authorEmail;     // author.email
@@ -38,5 +43,24 @@ public class PostDTO {
     }
     public void setAuthorEmail(String authorEmail) {
         this.authorEmail = authorEmail;
+    }
+    
+    public Integer getBodyLenght() {
+        return bodyLenght;
+    }
+    public void setBodyLenght(Integer bodyLenght) {
+        this.bodyLenght = bodyLenght;
+    }
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public String getPublishDate() {
+        return publishDate;
+    }
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
     }
 }

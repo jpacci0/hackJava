@@ -15,25 +15,25 @@
         error aliquid.
     </div>
     <script>
-        // let post = {
-        //     title: "Ciao",
-        //     body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum dolores repellat, debitis optio
-        //             tenetur expedita? Repudiandae voluptas dolores maiores incidunt iusto laudantium mollitia ipsa quam neque. Ex,
-        //             error aliquid.`,
-        //     publishDate: "20230417",
-        //     authorId: 2,
-        // };
-        // let body = JSON.stringify(post);
-        // // new XMLHttpRequest()
-        // fetch("/posts", {
-        //     method: "POST",
-        //     headers: {
-        //         "content-type": "application/json"
-        //     },
-        //     body: body,
-        // }).then((res) => {
-        //     console.log(res.status);
-        // });
+        let post = {
+            title: "Ciao",
+            body: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti laborum dolores repellat, debitis optio
+                    tenetur expedita? Repudiandae voluptas dolores maiores incidunt iusto laudantium mollitia ipsa quam neque. Ex,
+                    error aliquid.`,
+            publishDate: "20230417",
+            authorId: 2,
+        };
+        let body = JSON.stringify(post);
+        // new XMLHttpRequest()
+        fetch("/posts", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: body,
+        }).then((res) => {
+            console.log(res.status);
+        });
 
 //         let parse = JSON.parse(`[
 //     {

@@ -1,11 +1,14 @@
 package it.aulab.springbootcontroller.dto;
 
+// import java.util.List;
+
 public class AuthorDTO {
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private Integer numberOfPost;
+    // private List<PostDTO> posts;
     
     public AuthorDTO() {
     }

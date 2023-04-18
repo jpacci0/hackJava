@@ -1,6 +1,13 @@
 package it.aulab.springbootcontroller.dto;
 
 public class CreatePostDTO {
+    private Long id;
+    public Long getId() {
+        return id;
+    }
+    public void setId(Long id) {
+        this.id = id;
+    }
     private String title;
     private String body;
     private String publishDate;

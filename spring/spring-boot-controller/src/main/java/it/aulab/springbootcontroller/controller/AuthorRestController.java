@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.aulab.springbootcontroller.dto.AuthorDTO;
 import it.aulab.springbootcontroller.model.Author;
 import it.aulab.springbootcontroller.service.AuthorService;
 
@@ -43,7 +44,7 @@ public class AuthorRestController {
     // "/authors"
     // "/authors?firstName=Mirko"
     @GetMapping
-    public List<Author> getAll(
+    public List<AuthorDTO> getAll(
         @RequestParam(name = "firstName", required = false) String firstName, 
         @RequestParam(name = "lastName", required = false) String lastName
     ) {
@@ -51,7 +52,7 @@ public class AuthorRestController {
     }
 
     @GetMapping("{id}")
-    public Author getOne(
+    public AuthorDTO getOne(
         @PathVariable("id") Long id
     ) throws Exception {
         return authorService.readOne(id);
@@ -61,14 +62,14 @@ public class AuthorRestController {
     // @RequestMapping(value = "", method = RequestMethod.POST)
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    public Author post(@RequestBody Author author) {
+    public AuthorDTO post(@RequestBody Author author) throws Exception {
         return authorService.create(author);
     }
 
     // rotta parametrica -> "/authors/:id" PUT
     // @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     @PutMapping("{id}")
-    public Author put(@PathVariable("id") Long id, @RequestBody Author author) throws Exception {
+    public AuthorDTO put(@PathVariable("id") Long id, @RequestBody Author author) throws Exception {
         return authorService.update(id, author);
     }
 
